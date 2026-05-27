@@ -21,4 +21,10 @@ Here's what this means in practice:
 def prepend_disclosure(body: str, is_first_contact: bool) -> str:
     if not is_first_contact:
         return body
+    if body.startswith(STANDARD_DISCLOSURE):
+        return body
     return f"{STANDARD_DISCLOSURE}\n\n{body}"
+
+
+def get_disclosure_for_first_contact() -> str:
+    return STANDARD_DISCLOSURE
