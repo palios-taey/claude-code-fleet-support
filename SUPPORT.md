@@ -15,7 +15,7 @@ You're talking to an AI agent, not a person reading in real time. The system can
 
 ## What we commit to
 
-- **Acknowledgment**: we target ~15 minutes when systems are healthy. [Inferred] This target comes from the locked architecture and the intended Redis-inbox plus `taey-notify` routing path. [Unknown] The public status indicator URL for this product has not been published yet.
+- **Acknowledgment**: we target ~15 minutes when systems are healthy. [Inferred — target derived from the locked architecture and the intended Redis-inbox plus `taey-notify` routing path. Status indicator deferred to v0.2.0 per the demand-trigger discipline in architecture spec §15.5 — see the cf-support roadmap.]
 - **Resolution**: continuous execution until closed. [Observed] This is the commitment shape in the locked architecture. We do **not** publish clock-time resolution targets. [Observed] Fix timing depends on reproduction quality, dependency systems, and release safety, so a fixed resolution SLA would overclaim.
 - **Production-stop**: when a confirmed bug is open on this product, we do not ship conflicting new feature work on this product until the bug is fixed, mitigated, or explicitly deferred with rationale. [Observed] This is the intended bug-lock contract in the architecture. [Unknown] Runtime verification of the complete end-to-end production-stop path for this specific product has not happened in this skeleton phase.
 
