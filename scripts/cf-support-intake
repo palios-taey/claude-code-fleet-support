@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+"""cf-support-intake — support intake daemon skeleton."""
+
+from __future__ import annotations
+
+import argparse
+import os
+import sys
+
+
+def _bootstrap_path() -> None:
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    install_root = "/usr/local/lib/claude-code-fleet-support"
+    for candidate in (repo_root, install_root):
+        if candidate not in sys.path:
+            sys.path.insert(0, candidate)
+
+
+def main() -> None:
+    _bootstrap_path()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--once", action="store_true", help="Run one polling cycle and exit")
+    parser.parse_args()
+    raise NotImplementedError(
+        "foundation-cf-support-skeleton provides only the daemon shell; runtime implementation lands in "
+        "product-chatwoot-intake, product-github-webhook, product-gmail-intake, product-triage, "
+        "product-router, and product-buglock (spec §1-§6)"
+    )
+
+
+if __name__ == "__main__":
+    main()
